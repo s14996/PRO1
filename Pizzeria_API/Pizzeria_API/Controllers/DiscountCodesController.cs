@@ -19,7 +19,7 @@ namespace Pizzeria_API.Controllers
             _context = context;
         }
 
-        [HttpGet("{code:string}")]
+        [HttpGet("{code}")]
         public IActionResult GetByCode(string code)
         {
             DiscountCodes discountCode = _context.DiscountCodes.FirstOrDefault(o => o.Code.EqualsCaseInsensitive(code) && (o.IsActive ?? false));
